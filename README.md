@@ -1,6 +1,7 @@
 # Weather Forecast
 This is a(n) api driven weather service. HTML, CSS, and JS
 The idea was to not use any api's that required a key
+Side note, there is no user validation on this. Wasn't the main focus of the demo.
 
 There's a lot of variability you can do here
 (Weather API)

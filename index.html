@@ -1,27 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>Today's Weather Forecast</title>
+    <link rel="icon" type="image/x-icon" href="favicon.png">
     <link rel="stylesheet" href="style.css">
     <script src="app.js"></script>
 </head>
-<body>
-    <h1>Weather</h1>
 
-    <form action="">
-        <label for="userInputAddress">Please input an address:</label>
-        <input type="text" id="userInputAddress" name="userInputAddress">
-        <br><br>
-        <label for="userInputZip">Please input a postal code:</label>
-        <input type="text" id="userInputZip" name="userInputZip">
-        <br><br>
-        <input type="button" value="Submit" onclick="getWeatherInfo()">
-    </form>
-    
-    <div class="output">
-        <div id="myTemp"></div>
-    </div>
+<body>
+    <header>
+        <h1>Today's Weather Forecast</h1>
+    </header>
+
+    <main>
+        <section class="input-section">
+            <h2>Find the Forecast for Your Area</h2>
+            <form id="weatherForm">
+                <label for="userInputAddress">Address:</label>
+                <input type="text" id="userInputAddress" name="userInputAddress" placeholder="Enter your address">
+
+                <label for="userInputZip">Postal Code:</label>
+                <input type="text" id="userInputZip" name="userInputZip" placeholder="Enter your postal code">
+
+                <input type="button" value="Get Forecast" onclick="getWeatherInfo()">
+            </form>
+        </section>
+
+        <section class="output">
+            <h3>Weather Report</h3>
+            <div id="todays-temps"></div>
+            <div id="tonights-temps"></div>
+        </section>
+    </main>
 </body>
+
 </html>

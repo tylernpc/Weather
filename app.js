@@ -29,6 +29,13 @@ async function getWeatherInfo() {
   let forecastUrl = jsonData.properties.forecast;
   response = await fetch(forecastUrl);
   jsonData = await response.json();
-  let temperature = jsonData.properties.periods[0].temperature;
-  console.log(temperature);
+  let dayTemp = jsonData.properties.periods[0].detailedForecast;
+  let nightTemp = jsonData.properties.periods[1].detailedForecast;
+
+  document.getElementById(
+    "todays-temps"
+  ).innerHTML = `Today's temps will be ${dayTemp}`;
+  document.getElementById(
+    "tonights-temps"
+  ).innerHTML = `Tonight's temps will be ${nightTemp}`;
 }

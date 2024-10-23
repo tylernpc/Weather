@@ -11,10 +11,17 @@
     <h1>Weather</h1>
 
     <form action="">
-        <label for="userInputLocation">Please input a location:</label>
-        <input type="text" id="userInputLocation" name="userInputLocation">
-        <input type="button" value="Click" onclick="getWeatherInfo()">
+        <label for="userInputAddress">Please input an address:</label>
+        <input type="text" id="userInputAddress" name="userInputAddress">
+        <br><br>
+        <label for="userInputZip">Please input a postal code:</label>
+        <input type="text" id="userInputZip" name="userInputZip">
+        <br><br>
+        <input type="button" value="Submit" onclick="getWeatherInfo()">
     </form>
     
+    <div class="output">
+        <div class="myTemp"></div>
+    </div>
 </body>
 </html>

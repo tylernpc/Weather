@@ -17,7 +17,7 @@ async function getUserLocation() {
 }
 
 async function getWeatherInfo() {
-  getUserLocation();
+  let [latitude, longitude] = await getUserLocation();
   // 1 | create api string
   let apiString = `https://api.weather.gov/points/${latitude},${longitude}`;
 
@@ -26,13 +26,9 @@ async function getWeatherInfo() {
   let jsonData = await response.json();
 
   // 3 | do stuff with json below
-  document.getElementById("myTemp").innerHTML +=
-    jsonData.properties.periods[i].temperature +
-    " degrees Farenheit" +
-    "<br><br>";
-  //
+  let forecastUrl = jsonData.properties.forecast;
+  response = await fetch(forecastUrl);
+  jsonData = await response.json();
+  let temperature = jsonData.properties.periods[0].temperature;
+  console.log(temperature);
 }
-
-// // 40.81084153320897, -96.69021919814986 | DONT PANIC LABS COORDS
-
-// // https://geocoder.ca/?locate=1221+n44th+st,+68503&geoit=XML&json=1
